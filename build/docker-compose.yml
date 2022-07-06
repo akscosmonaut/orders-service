@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: orders-models
+      POSTGRES_USER: orders-models
+      POSTGRES_PASSWORD: orders-models
+    ports:
+      - '5432:5432'
