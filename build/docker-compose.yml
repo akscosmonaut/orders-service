@@ -3,8 +3,8 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_DB: orders-models
-      POSTGRES_USER: orders-models
-      POSTGRES_PASSWORD: orders-models
+      POSTGRES_DB: orders-service
+      POSTGRES_USER: orders-service
+      POSTGRES_PASSWORD: orders-service
     ports:
       - '5432:5432'

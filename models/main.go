@@ -5,6 +5,7 @@ GET orders-service/orders/:id //список одного заказа
 'name':'Mariya', //имя клиента
 'address': 'Тверская 6', //адрес дотавки
 'phone':'+79268484744', //номер клиента
+'status':'new',
 'products': [1,6,8,4,3] //id продуктов из таблицы products
 }
 POST orders-service/orders //создание заказа (заказ создаётся со статусом new)
@@ -13,10 +14,11 @@ body:
 	'name':'Mariya', //имя клиента
 	'address': 'Тверская 6', //адрес дотавки
 	'phone':'+79268484744', //номер клиента
+	'status':'new',
 	'products': [1,6,8,4,3] //id продуктов из таблицы products
 }
 ответ: {'id': id}
-PUT orders-service/orders
+PUT orders-service/orders/:id //изменение состава заказа, контактной информации, адреса
 body:
 {
 	'name':'Mariya',
@@ -29,10 +31,12 @@ DELETE orders-service/orders/:id //удаление заказа
 ответ: 200
 GET orders-service/products //получение списка продуктов магазина
 [{
+	'id': 1,
 	'name': 'хлеб',
 	'price': 50
 },
 {
+	'id': 2,
 	'name': 'молоко',
 	'price': 80
 },
