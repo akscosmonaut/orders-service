@@ -8,7 +8,6 @@ CREATE TABLE orders
     name varchar(256),
     phone varchar(256),
     status status,
-    products bigint[],
     total int
 
 );

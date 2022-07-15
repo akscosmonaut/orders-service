@@ -13,7 +13,7 @@ type Connector struct {
 }
 
 func (p *Connector) Connect() {
-	connInfo := os.Getenv("ORDERS_SERVICE_DB")
+	connInfo := os.Getenv("APP_ORDERS_SERVICE_DB")
 	if connInfo == "" {
 		log.Fatal().Msg("empty postgres host")
 	}
