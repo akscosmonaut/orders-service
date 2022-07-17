@@ -2,8 +2,8 @@
 -- +goose StatementBegin
 CREATE TABLE products
 (
-    id    bigserial primary key,
-    name  varchar(256),
+    id    bigserial primary key unique,
+    name  varchar(256) unique,
     price int
 );
 
