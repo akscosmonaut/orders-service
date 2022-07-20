@@ -22,10 +22,10 @@ services:
     ports:
       - "9000:9000"
 
-#  tests:
-#    env_file:
-#      - ../tests/.env
-#    entrypoint: [ "/go/src/bb.delivery-club.ru/grocery/picker-backend/build/testenv/run-test.sh" ]
-#    depends_on:
-#        orders-service:
-#          condition: service_healthy
+  tests:
+    build: ../
+    env_file:
+      - ../tests/.env
+    entrypoint: [ "github.com/akscosmonaut/orders-service/tests/run-tests.sh" ]
+    depends_on:
+      - orders-service
