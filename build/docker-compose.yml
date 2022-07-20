@@ -26,6 +26,6 @@ services:
     build: ../
     env_file:
       - ../tests/.env
-    entrypoint: [ "github.com/akscosmonaut/orders-service/tests/run-tests.sh" ]
+    entrypoint: [ "tests/run-tests.sh" ]
     depends_on:
       - orders-service
