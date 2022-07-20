@@ -3,7 +3,7 @@
 CREATE TABLE products
 (
     id    bigserial primary key unique,
-    name  varchar(256) unique,
+    name  varchar(256),
     price int
 );
 
