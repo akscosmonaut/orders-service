@@ -1,14 +1,6 @@
 version: '2.1'
 
 services:
-  orders-service:
-    build: ../
-    restart: always
-    env_file:
-      - .env
-    ports:
-      - "9000:9000"
-
   postgres:
     image: postgres
     restart: always
@@ -19,3 +11,21 @@ services:
       POSTGRES_PASSWORD: orders-service
     ports:
       - '5432:5432'
+
+  orders-service:
+    build: ../
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    ports:
+      - "9000:9000"
+
+  tests:
+    env_file:
+      - ../tests/.env
+    entrypoint: [ "/go/src/bb.delivery-club.ru/grocery/picker-backend/build/testenv/run-test.sh" ]
+    depends_on:
+        orders-service:
+          condition: service_healthy
