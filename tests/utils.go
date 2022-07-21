@@ -5,6 +5,9 @@ import (
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
+	_ "github.com/lib/pq" // this is actually a test package
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -12,10 +15,6 @@ import (
 	"reflect"
 	"strings"
 	"testing"
-	_ "github.com/lib/pq" // this is actually a test package
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
-
 )
 
 var (

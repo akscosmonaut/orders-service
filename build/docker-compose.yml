@@ -26,6 +26,6 @@ services:
     build: ../
     env_file:
       - ../tests/.env
-    entrypoint: [ "tests/run-tests.sh" ]
+    entrypoint: [ "/go/src/orders-service/tests/run-tests.sh" ]
     depends_on:
       - orders-service
