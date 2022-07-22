@@ -1,5 +1,6 @@
 #!/bin/sh
 
-echo "TEST RUN"
+echo "TESTS RUN"
 cd tests
 go test . -count=1 "$@"
+echo "TESTS FINISHED"

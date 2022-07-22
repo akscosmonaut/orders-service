@@ -11,6 +11,11 @@ CREATE TABLE orders
     total int
 
 );
+
+INSERT INTO orders (address, name, phone, status, total)
+VALUES ('Бассейная, 57', 'Роман', '+78339992211', 'new', 712),
+       ('Дубравы, 67', 'Сергей', '+78334442211', 'new', 910),
+       ('Мира, 203', 'Татьяна', '+78339388311', 'confirmed', 645);
 -- +goose StatementEnd
 -- +goose Down
 -- +goose StatementBegin
